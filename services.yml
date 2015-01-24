@@ -5,5 +5,7 @@ parameters:
 services:
     app.command.test:
         class: App\Command\TestCommand
+        calls:
+            - [setContainer, ["@service_container"]]
         tags:
             - { name: console.command }

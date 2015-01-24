@@ -1,0 +1,25 @@
+{
+    "output": "app.phar",
+    "chmod": "0755",
+    "compactors": [
+        "Herrera\\Box\\Compactor\\Php"
+    ],
+    "extract": false,
+    "main": "bin/app",
+    "files": [
+        "services.yml"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": ["Tests", "tests", "test", "Tester"],
+            "in": "vendor"
+        },
+        {
+            "name": "*.*",
+            "in": "src"
+        }
+    ],
+    "stub": true,
+    "web": false
+}

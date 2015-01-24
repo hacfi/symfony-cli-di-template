@@ -1,0 +1,9 @@
+parameters:
+    app.name: app
+    app.version: 0.0.1
+
+services:
+    app.command.test:
+        class: App\Command\TestCommand
+        tags:
+            - { name: console.command }

@@ -1,0 +1,17 @@
+{
+    "name": "hacfi/symfony-cli-di-template",
+    "authors": [
+        {
+            "name": "Philipp Wahala",
+            "email": "philipp.wahala@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": { "": "src/" }
+    },
+    "require": {
+        "box-project/scaffold": "dev-master",
+        "symfony/yaml": "~2.6"
+    }
+}

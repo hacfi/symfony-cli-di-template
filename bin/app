@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+set_time_limit(0);
+
+require_once __DIR__.'/../vendor/autoload.php';
+
+use Box\Scaffold\Application;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+
+Application::load(
+    '' !== ($pharFile = Phar::running(false))
+        ? dirname($pharFile).'/cache/container.php'
+        : __DIR__.'/../var/cache/container.php',
+    function (ContainerBuilder $builder) {
+        $loader = new YamlFileLoader(
+            $builder,
+            new FileLocator(__DIR__.'/..')
+        );
+
+        $loader->load('services.yml');
+    }
+)->run();
+
